@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments | Hospital Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* You can move these styles to your style.css later */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f8fb;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0056b3;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #003d80;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .departments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .department-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .department-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Departments</h1>
+        <p>Explore the wide range of departments that keep our patients healthy and safe.</p>
+    </header>
+
+    <nav>
+    <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="Hospital .html">HOSPITALS</a></li>
+          <li><a href="departments.html">DEPARTMENTS</a></li>
+          <li><a href="doctors.html">DOCTORS</a></li>
+          <li><a href="contact us.html">CONTACT US</a></li>
+          <li><a href="about us.html">ABOUT US</a></li>
+        
+  
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="departments">
+            <div class="department-card">
+                <img src="lab services.jpg" alt="Lab Department">
+                <h3>Laboratory Services</h3>
+                <p>State-of-the-art diagnostic lab with fast and accurate results.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="intensive care unit.jpg" alt="ICU Department">
+                <h3>Intensive Care Unit (ICU)</h3>
+                <p>Providing round-the-clock care for critically ill patients.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="gynecologist.jpg" alt="Gynecology Department">
+                <h3>Gynecology & Maternity</h3>
+                <p>Comprehensive care for women’s health and maternity services.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="inpatient facility.jpg" alt="Inpatient Department">
+                <h3>Inpatient Services</h3>
+                <p>Comfortable and safe patient wards with 24/7 nursing care.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="kenyatta national.jpg" alt="Surgery Department">
+                <h3>Surgery Department</h3>
+                <p>Equipped for minor and major surgeries with expert surgeons.</p>
+            </div>
+
+            <div class="department-card">
+                <img src="lab facility.jpg" alt="Pharmacy Department">
+                <h3>Pharmacy</h3>
+                <p>Providing all essential medications and professional advice.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer><img src="hospital hub logo.png" alt width="50" height="50" text-align="absolute">
+        <p>&copy; 2025 Hospital Hub | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

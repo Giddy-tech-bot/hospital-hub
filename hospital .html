@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospitals | Hospital Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f7ff;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    nav {
+      background-color: #004a99;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      max-width: 100px;
+      margin:32px auto;
+      padding: 0 20px;
+        display:flex;}
+  .container:hover {
+      background-color: #0056b3;
+    }
+    }
+
+    .search-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    select, input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      min-width: 180px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .hospital-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .hospital-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .hospital-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hospital-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .hospital-info {
+      padding: 15px;
+    }
+
+    .book-btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .book-btn:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004a99;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Find Hospitals in Your County</h1>
+    <p>Search and book hospitals based on location, level, doctor, and time.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="hospitals.html">HOSPITALS</a></li>
+      <li><a href="departments.html">DEPARTMENTS</a></li>
+      <li><a href="doctors.html">DOCTORS</a></li>
+      <li><a href="contact us.html">CONTACT US</a></li>
+      <li><a href="about us.html">ABOUT US</a></li>
+    </ul>
+  </nav>
+
+  
+    <!-- SEARCH FILTERS -->
+    <div class="search-section">
+      <select id="countySelect">
+        <option value="">Select County</option>
+        <option value="Nairobi">Nairobi</option>
+        <option value="Kisumu">Kisumu</option>
+        <option value="Uasin Gishu">Uasin Gishu</option>
+      </select><div class="search-section">
+      <select id="hospitalSelect">
+        <option value="">Select hospital</option>
+        <option value="Kenyatta hospital">kenyatta hospital</option>
+        <option value="Mbaghathi">Mbaghathi</option>
+        <option value="Moi teaching and referal">Moi teaching and referal</option>
+      </select>
+
+      <select id="levelSelect">
+        <option value="">Select Hospital Level</option>
+        <option value="Level 3">Level 3</option>
+        <option value="Level 4">Level 4</option>
+        <option value="Level 5">Level 5</option>
+        <option value="Level 6">Level 6 (Referral)</option>
+      </select>
+
+      <select id="doctorSelect">
+        <option value="">Select Doctor</option>
+        <option value="Jane Mwangi">Dr. Jane Mwangi</option>
+        <option value="Samuel Kimani">Dr. Samuel Kimani</option>
+        <option value="Brian Oloo">Dr. Brian Oloo</option>
+        <option value="Achieng Onyango">Dr. Achieng Onyango</option>
+        <option value="Kiptoo Arap Cheruiyot">Dr. Kiptoo Arap Cheruiyot</option>
+        <option value="Faith Chepkorir">Dr. Faith Chepkorir</option>
+      </select>
+
+      <select id="daySelect">
+        <option value="">Select Day</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+      </select>
+
+      <select id="timeSelect">
+        <option value="">Select Time</option>
+        <option value="Morning">Morning (8am - 12pm)</option>
+        <option value="Afternoon">Afternoon (12pm - 4pm)</option>
+        <option value="Evening">Evening (4pm - 8pm)</option>
+      </select>
+
+      <button onclick="filterHospitals()">Book</button>
+    </div>
+
+    <!-- HOSPITAL CARDS --> <div class="container"></div>
+    <div class="hospital-list" id="hospitalList">
+
+      <div class="hospital-card" 
+           data-county="Nairobi" 
+           data-level="Level 6" 
+         >
+        <img src="kenyatta national.jpg" alt="Kenyatta National Hospital">
+        <div class="hospital-info">
+          <h3>Kenyatta National Hospital</h3>
+          <p>County: Nairobi</p>
+          <p>Level: Level 6 (Referral)</p>
+          <p>Doctors: Dr. Jane Mwangi, Dr. Samuel Kimani</p>
+          <a href="#" class="book-btn">Book Hospital</a>
+      </div>
+      </div>
+
+      <div class="hospital-card" 
+           data-county="Kisumu" 
+           data-level="Level 5" 
+          >
+        <img src="lab facility.jpg" alt="Jaramogi Oginga Odinga Hospital">
+        <div class="hospital-info">
+          <h3>Jaramogi Oginga Odinga Hospital</h3>
+          <p>County: Kisumu</p>
+          <p>Level: Level 5</p>
+          
+          <a href="#" class="book-btn">Book Hospital</a>
+        </div>
+      </div>
+
+      <div class="hospital-card" 
+           data-county="Uasin Gishu" 
+           data-level="Level 6"
+           >
+        <img src="inpatient facility.jpg" alt="Moi Teaching & Referral Hospital">
+        <div class="hospital-info">
+          <h3>Moi Teaching & Referral Hospital</h3>
+          <p>County: Uasin Gishu</p>
+          <p>Level: Level 6</p>
+        
+          <a href="#" class="book-btn">Book Hospital</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <img src="hospital hub logo.png" alt="Hospital Hub Logo" width="50" height="50"><br>
+    <p>&copy; 2025 Hospital Hub | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function filterHospitals() {
+      const county = document.getElementById('countySelect').value.toLowerCase();
+      const level = document.getElementById('levelSelect').value.toLowerCase();
+      const doctor = document.getElementById('doctorSelect').value.toLowerCase();
+      const day = document.getElementById('daySelect').value.toLowerCase();
+      const time = document.getElementById('timeSelect').value.toLowerCase();
+
+      const hospitals = document.querySelectorAll('.hospital-card');
+
+      hospitals.forEach(card => {
+        const hospitalCounty = card.getAttribute('data-county').toLowerCase();
+        const hospitalLevel = card.getAttribute('data-level').toLowerCase();
+        const hospitalDoctor = card.getAttribute('data-doctor').toLowerCase();
+        const hospitalDay = card.getAttribute('data-day').toLowerCase();
+        const hospitalTime = card.getAttribute('data-time').toLowerCase();
+
+        if (
+          (county === '' || hospitalCounty.includes(county)) &&
+          (level === '' || hospitalLevel.includes(level)) &&
+          (doctor === '' || hospitalDoctor.includes(doctor)) &&
+          (day === '' || hospitalDay.includes(day)) &&
+          (time === '' || hospitalTime.includes(time))
+        ) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

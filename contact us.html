@@ -1,0 +1,85 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contacts | Hospital  hub</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Get in touch with Hospital Hub below.</p>
+  </header>
+<nav>
+        <div class="nav-links"> 
+        <ul>
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="Hospital .html">HOSPITALS</a></li>
+          <li><a href="departments.html">DEPARTMENTS</a></li>
+          <li><a href="doctors.html">DOCTORS</a></li>
+          <li><a href="contact us.html">CONTACT US</a></li>
+          <li><a href="about us.html">ABOUT US</a></li>
+        
+  
+        </ul>
+      </div>
+  </nav>
+
+  <div class="container">
+    <div class="contact-info">
+      <div>
+        <h3>📍 Address</h3>
+        <p>Hospital Hub Headquarters</p>
+        <p>Maseno, Kisumu County, Kenya</p>
+      </div>
+
+      <div>
+        <h3>📞 Phone</h3>
+        <p>+254 722 345 600</p>
+        <p>Mon – Fri: 8:00 AM – 5:00 PM</p>
+      </div>
+
+      <div>
+        <h3>📧 Email</h3>
+        <p>info@hospitalhub.co.ke</p>
+        <p>support@hospitalhub.co.ke</p>
+      </div>
+    </div>
+
+    <form onsubmit="return sendMessage(event)">
+      <h2>Send Us a Message</h2>
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63929.1168023159!2d34.57626121920811!3d-0.0917012707987595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa8e81b8dd32b%3A0xa4a2eaf88db7e9a4!2sMaseno%20University!5e0!3m2!1sen!2ske!4v1698912345678!5m2!1sen!2ske" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <footer><img src="hospital hub logo.png" alt width="50" height="50" text-align="absolute">
+    <p>&copy; 2025 Hospital Hub | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (name && email && message) {
+        alert(`Thank you, ${name}! Your message has been sent successfully.`);
+        document.querySelector("form").reset();
+      } else {
+        alert("Please fill in all fields before submitting.");
+      }
+    }
+  </script>
+</body>
+</html>

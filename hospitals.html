@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospitals | Hospital Hub</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <header>
+    <h1>Find Hospitals in Your County</h1>
+    <p>Search and book hospitals based on location, level, and doctors available.</p>
+  </header>
+
+  <nav> <img src="hospital hub logo.png"alt width="0" height="100">
+      <ul>
+          <li><a href="home.php">HOME</a></li>
+          <li><a href="Hospital .php">HOSPITALS</a></li>
+          <li><a href="departments.php">DEPARTMENTS</a></li>
+          <li><a href="doctors.php">DOCTORS</a></li>
+          <li><a href="contact us.php">CONTACT US</a></li>
+          <li><a href="about us.php">ABOUT US</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+
+      </ul>
+  </nav>
+
+  <div class="container">
+    <div class="search-section">
+      <input type="text" id="searchCounty" placeholder="Search by County..." />
+      <select id="hospitalLevel">
+        <option value="">Select Hospital Level</option>
+        <option value="Level 3">Level 3</option>
+        <option value="Level 4">Level 4</option>
+        <option value="Level 5">Level 5</option>
+        <option value="Level 6">Level 6 (Referral)</option>
+        
+  <input type="text" placeholder="Your Name"><br>
+  <input type="number" placeholder="Phone Number"><br>
+  <input type="text" placeholder="Name of hospital"><br>
+  <button class="button">submit details</button>
+      </select>
+      <input type="text" id="searchDoctor" placeholder="Search by Doctor Name..." />
+      <button class="book-btn" onclick="searchHospitals()">Search</button>
+    </div>
+
+    <div class="hospital-list" id="hospitalList">
+      <div class="hospital-card" data-county="Nairobi" data-level="Level 6">
+        <img src="kenyatta national.jpg" alt="Kenyatta National Hospital" />
+        <h3>Kenyatta National Hospital</h3>
+        <p>County: Nairobi</p>
+        <p>Level: Level 6 (Referral)</p>
+        <p>Doctors: Dr. Jane Mwangi, Dr. Samuel Kimani</p>
+        <a href="#" class="book-btn">Book Hospital</a>
+      </div>
+
+      <div class="hospital-card" data-county="Kisumu" data-level="Level 5">
+        <img src="lab facility.jpg" alt="Jaramogi Oginga Odinga Hospital" />
+        <h3>Jaramogi Oginga Odinga Hospital</h3>
+        <p>County: Kisumu</p>
+        <p>Level: Level 5</p>
+        <p>Doctors: Dr. Brian Oloo, Dr. Achieng Onyango</p>
+        <a href="#" class="book-btn">Book Hospital</a>
+      </div>
+
+      <div class="hospital-card" data-county="Uasin Gishu" data-level="Level 6">
+        <img src="inpatient facility.jpg" alt="Moi Teaching & Referral Hospital" />
+        <h3>Moi Teaching & Referral Hospital</h3>
+        <p>County: Uasin Gishu</p>
+        <p>Level: Level 6</p>
+        <p>Doctors: Dr. Kiptoo Arap Cheruiyot, Dr. Faith Chepkorir</p>
+        <a href="#" class="book-btn">Book Hospital</a>
+      </div>
+    </div>
+  </div>
+
+  <footer><img src="hospital hub logo.png" alt width="50" height="50" text-align="absolute">
+    <p>&copy; 2025 Hospital Hub | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function searchHospitals() {
+      const county = document.getElementById('searchCounty').value.toLowerCase();
+      const level = document.getElementById('hospitalLevel').value;
+      const doctor = document.getElementById('searchDoctor').value.toLowerCase();
+
+      const hospitals = document.querySelectorAll('.hospital-card');
+      hospitals.forEach(card => {
+        const hospitalCounty = card.getAttribute('data-county').toLowerCase();
+        const hospitalLevel = card.getAttribute('data-level');
+        const hospitalDoctors = card.textContent.toLowerCase();
+
+        if (
+          (county === '' || hospitalCounty.includes(county)) &&
+          (level === '' || hospitalLevel === level) &&
+          (doctor === '' || hospitalDoctors.includes(doctor))
+        ) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
